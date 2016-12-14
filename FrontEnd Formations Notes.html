@@ -1,0 +1,283 @@
+
+<!-- A section tag is exactly the same as a div, except in terms of readability.  It is used to divide out a section of thematically related content.  -->
+<section>
+	<h2> The gallery</h2>
+</section>
+
+<!-- the header element is defined by its content, not its position.  It is also like a div, but is more semantically readable than <div class="header"></div> -->
+<section>
+	<header>
+		<h1>The heading of the section</h1>
+		<p>This is the content in the header.</p>
+	</header>
+	<p>This is some information within the section.</p>
+</section>
+
+footer is just like the header, but its a footer...
+<section>
+	<footer>
+	<p> content for a footer within a section</p>
+	</footer>
+</section>
+
+<!-- asides are used for like, sidebars.  but again, it's the same as a <div class="sidebar"></div>, but when looking at all these things together IT DOES make more sense in your head since they're nicely labeled and you can imagine what it will look like a little easier -->
+
+<section>
+	<header>
+		<h1>The heading of the section</h1>
+		<p>This is the content in the header.</p>
+	</header>
+	<p>This is some information within the section.</p>
+	<aside>
+		<p>some secondary info</p>
+	</aside>
+	<footer>
+		<p> content for a footer within a section</p>
+	</footer>
+</section>
+
+<!-- nav elements are sections with navigation links.  It's intended for major navigation. rather than having <ul class="nav"></ul> you have... -->
+<nav>
+	<ul>
+	</ul>
+</nav>
+
+<!-- An article element is another type of section that is used for a self contained piece of content.  Uses: blog post, news story, review, etc. -->
+
+<article>
+</article>
+
+<!-- main element represents main content.  It is for content that is directly related to or expands upon the central topic.  ONly use one main element in a document, and do not use it inside other elements like header, footer, nav, etc. -->
+
+<main>
+</main>
+
+<!-- figure element is for self contained content that may have a caption, and if it's taken away won't affect the document's meaning. commonly used for images inside articles/ -->
+<figure>
+	<img src="image.jpg" alt="My Picture"/>
+	<figcaption>This is a caption for the picture</figcaption>
+</figure>
+
+<!-- time element can be used to input times, such as when something was published. -->
+<time datetime="2013-09-16">09/16/2013</time>
+
+
+*******************Forms:**************
+
+*****inputs*****
+New input types including: search, email, url, date, tel, number
+
+<input type="search"/>
+
+using the email type gives useful related keys without having to switch through key menus when you use a mobile version, such as the @ symbol.
+<input type="email"/>
+
+url also gives more useability on mobile, such as / and .com keys.
+<input type="url"/>
+
+date is a control for setting the element's value to a string representing a date.  This creates a date picker in the browser, and in the mobile version, that lets you pick dates off a calendar and then inputs them for you
+<input type="date"/>
+
+tel also gives added useablity with mobile devices.  on ios, the input changes to the telephone keyboard
+<input type="tel" />
+
+number creates an up/down arrow that allows you to increase or decrease the input value by clicking. Mobile brings up the number keys at the top of the keyboard to allow easier number inputs
+<input type="number"/>
+
+range is an imprecies control for setting a number.  creates a slider that will let you change the number
+<input type="range"/>
+
+month/week - creates input boxes which allow you to select a whole month or a whole week respectively.
+<input type="month"/>
+<input type="week"/>
+
+time/datetime-local - creates an input box that lets you select a time, or a time that lets you select a date AND a time. respectively.
+<input type="time"/>
+<input type="datetime-local"/>
+
+color - lets us set a string that represents a color. this creates a toggle that gives us a color picker to select a color.
+<input type="color"/>
+
+*****form elements*****
+datalist - this will give autocomplete options that are specified in the options below.  The list "browsers" tells the input to link to the datalist with the id "browsers" then it will create autocomplete options for the user as they type
+<input type="text" list="browsers" />
+<datalist id="browsers">
+	<option value="Chrome">
+	<option value="Firefox">
+	<option value="Internet Explorer">
+	<option value="Opera">
+	<option value="Safari">
+</datalist>
+
+*****form attributes*****
+placeholder, autofocus, autocomplete, required, pattern, list, multiple, novalidate, formnovalidate, form, formaction, formenctype, formmethod, formtarget
+
+placeholder - allows you to specify a message that is shown inside the input until the user starts typing, then will return when focus is lost on the blank input
+<input type="text" placeholder="Enter your email..." />
+
+autofocus - automatically focuses to the specified input when the page is rendered
+
+<input type="text" autofocus />
+
+required - when the form is submitted, the user will be notified of an error if the field is left blank.
+
+<input type="text" required />
+
+pattern - accepts a javascript regular expression that can be used to validate the form field to match a pattern.  Will notify the user with an error until the pattern is matched.
+<input type="text" pattern="[0-9]{3}" />
+
+
+
+****************CSS3 Styles*****************
+<style>
+Border Radius - allows us to apply rounded corners to borders.  can use pixels or %
+
+/*grey box*/
+.box {
+	background: grey;
+	height: 50px;
+	width: 200px;
+}
+/*rounded corners*/
+.box {
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+/*shorthand
+border-radius: <top left> <top right> <bottom right> <bottom left>;
+*/
+.box {
+	border-radius: 15px;
+	OR 
+	border-radius: 4px 15px 12px 10px;
+}
+
+boxshadow allows us to specify a shadow on a given element.
+
+box-shadow: <inset> <offset-x> <offset-y> <blur-radius> <spread-radius> <color>
+.box {
+	box-shadow: 1px 2px 2px #000;
+}
+
+text shadow - similar to box shadow but applied to text
+
+h1 {
+	text-shadow: 1px 2px 2px #000;
+}
+
+box sizing is used to change the default css box model, which is used to calculate widths and heights of given elements.  So for example, if you set the width of a div to be 100% and then gave it borders, the borders could be pushed off the screen.  fix it with...
+div {
+	box-sizing: border-box;
+	/*this includes the border and the margins(i think) in the calculation of width, so that it doesn't push them off the screen*/
+}
+
+multiple backgrounds - when this is all done, you get two images, the first that was specified will be on top and they will be offset according to the selected position
+.element {
+	background-image: url(bg1.png), url(bg2.png);
+	background-position: top-left, center-right;
+	background-repeat: no-repeat, no-repeat;
+	OR 
+	background:
+		url(bg1.png) top left no-repeat,
+		url(bg2.png) center right no-repeat;
+}
+
+color = can use rgba function (red, green, blue, opacity) or hsla (hue, saturation, lightness, opacity).  HSLa is usually a little more intuitive for making adjustments
+
+.element {
+	color: rgba(0,0,0,0.75); /*black background that is 75% opaque*/
+}
+.element {
+	color: hsla(240, 100%, 50%, 0.75);
+}
+
+opacity - affects all elements nested inside it.  If you set the opacity on a div, for example, all things nested in that div will also receive the effects of the opacity change.
+
+.element {
+	opacity: 0.45;
+}
+
+gradients = smooth transitions between two or more colors.  linear and radial/
+.element {
+	backgound: linear-gradient(to bottom, red, yellow);
+	/*linear-gradient(<angle> to <side-or-corner>. <color-stop>) for the side or corner, keywords are to top(0deg) to bottom (180deg) to right (270deg) and to left(90deg)*/
+}
+
+radial gradients are circular and extend from the center.
+.element {
+	background: radial-gradient(aqua, blue);
+	/*radial-gradient: <shape> <size> at <position>, <color-stop>;*/
+
+}
+
+
+fonts and interactions
+
+@font-face - we have the ability to provide online fonts for use on our websites
+@font-face {
+	font-family: 'OpenSansRegular';
+	src: url('OpenSansRegular-webfont.eot');
+	font-style: normal;
+	font-weight: normal;
+}
+
+h1 {
+	font-family: 'OpenSansRegular', Helvetica, Arial, sans-serif;
+}
+changing font weight when using @font-face requires some extra changes.  Google it if you're discovering it isn't doing what you want
+
+transform - using this property we can translate, rotate, scale and skew elements in css
+
+.element {
+						 /* x      y*/
+	transform: translate(20px, 30px);
+	OR 
+	transform: translateX(20px);
+	transform: translateY(20px);
+}
+
+rotate - can rotate elements
+scale - can do a 2d scale by a specified unitless number
+.element {
+	transform: rotate(45deg);
+	transform: scale(1.2); /*you can specify a x and y, if you don't specifiy y it will be the same as x*/
+	transform: skew(25deg);
+}
+
+transitions - allow you to transition between two states of a given element
+say you want to have a background change when you hover
+/*transition: <property> <duration> <timing-function(ease, ease-in, ease-in-out, linear, cubic-bezier, step-start, step-end, steps())<delay>*/
+.element {
+	background-color: black;
+	transition: background-color 0.2s ease-in-out;
+}
+
+or
+.element {
+	transition-property: background-color;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+	transition-delay: 0.1s;
+}
+.element:hover {
+	background-color: blue;
+}
+
+
+another example, using the all property to handle all the transitions specified.
+.element {
+	background-color: black;
+	color: white;
+	transition: all 0.2s ease-in-out;
+}
+.element:hover {
+	background-color: grey;
+	color: black;
+}
+
+
+
+progressive enhancement - the use of newer features that add to the expeirence in modern browsers that support those featers, but doesn't detract from the experience in old browsers.  So you should specify basic stuff at the top, and enhance your elements as you move down so things degrade gracefully in browsers that don't support them
+</style>
